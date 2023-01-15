@@ -47,7 +47,7 @@ jdk 1.8을 실행하기 위해 9 버전의 Tomcat을 다운로드 및 설치하�
 2) 패키지명은 com.devfun.settingweb으로 설정하였습니다.
 이때, 다음과 같은 오류가 발생하였습니다. <br/>
 
-
+<오류 수정 후 내용 추가...>
 
 **5. mariadb, mySql Workbench 설치 및 샘플 DB 구축** <br/>
 1) Windows용 MariaDB 설치 한 후 설정한 암호를 입력하여 root계정으로 로그인했습니다.
@@ -61,5 +61,9 @@ Theater(극장)이라는 스키마를 생성하고 그 안에 Tables, Views, Sto
 
 이때, mysql workbench를 재실행하였을 때 무한대기하는 문제가 발생하였습니다.
 서비스 > mysql80이 실행되지 않은 것을 확인하고 시작을 한 결과 "mysql80 서비스가 로컬 컴퓨터에서 시작했다가 중지되었습니다." 라는 오류 문장이 뜨면서 실행이 되지 않았습니다.
-그래서 [작업 관리자]에서 mysqld 데몬 프로세스를 실행취소하고 mysql80을 실행하였더니 문제가 해결되었습니다.</br>
+그래서 [작업 관리자]에서 mysqld 데몬 프로세스를 실행취소하고 mysql80을 실행하였더니 문제가 해결되었습니다.</br></br>
+![mysql 무한대기문제 해결책](https://user-images.githubusercontent.com/74498379/212532774-5e8c11c0-69c1-4982-8e1e-782d61505f33.png)</br>
+
+**6. 스프링, Mariadb, MyBatis 연동, 데이터 조회**</br>
+< 4번 문제 해결 후 6번 진행...>
 
