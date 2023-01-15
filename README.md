@@ -56,5 +56,10 @@ jdk 1.8을 실행하기 위해 9 버전의 Tomcat을 다운로드 및 설치하�
 
 2) mysql workbench 설치
 Theater(극장)이라는 스키마를 생성하고 그 안에 Tables, Views, StoredProcedures, Functions 테이블을 생성했습니다.
-각 테이블마다 속성을 지정해주고 데이터를 넣고 조회하였습니다.
+각 테이블마다 속성을 지정해주고 데이터를 넣고 조회하였습니다. </br></br>
+![mysql 실행결과](https://user-images.githubusercontent.com/74498379/212532466-3a9f8b5b-257b-4d7d-b187-496fc797c051.png)
+
+이때, mysql workbench를 재실행하였을 때 무한대기하는 문제가 발생하였습니다.
+서비스 > mysql80이 실행되지 않은 것을 확인하고 시작을 한 결과 "mysql80 서비스가 로컬 컴퓨터에서 시작했다가 중지되었습니다." 라는 오류 문장이 뜨면서 실행이 되지 않았습니다.
+그래서 [작업 관리자]에서 mysqld 데몬 프로세스를 실행취소하고 mysql80을 실행하였더니 문제가 해결되었습니다.</br>
 
