@@ -70,6 +70,8 @@ Theater(극장)이라는 스키마를 생성하고 그 안에 Tables, Views, Sto
 
 ----
 ## [2차 과제] 인터페이스 가이드 문서 작성
+[SW활용현황 API 가이드문서.pdf](https://github.com/yunju-m/Comento/files/10465738/SW.API.pdf)
+
 > **REST API** </br>
 
 REST API(RESTful API)는 REST 아키텍처 스타일의 제약 조건을 준수하고 RESTful 웹 서비스와 상호 작용할 수 있도록 하는 애플리케이션 프로그래밍 인터페이스(API 또는 웹 API)입니다. API 개발자는 여러 아키텍처를 사용하여 API를 설계할 수 있습니다. REST 아키텍처 스타일을 따르는 API를 REST API라고 합니다. REST 아키텍처를 구현하는 웹 서비스를 RESTful 웹 서비스라고 합니다. RESTful API라는 용어는 일반적으로 RESTful 웹 API를 나타냅니다. 하지만 REST API와 RESTful API라는 용어는 같은 의미로 사용할 수 있습니다.
@@ -149,3 +151,4 @@ com DNS에 (www.naver.com) 정보가 없다면 Local DNS에게 naver.com DNS정�
 19. 최종적으로 naver.com 홈페이지가 사용자의 브라우저에 보이게 됩니다.
 
 [출처] (https://blog.naver.com/tkdldjs35/221977544533)
+
