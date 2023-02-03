@@ -60,7 +60,9 @@ jdk 1.8을 실행하기 위해 9 버전의 Tomcat을 다운로드 및 설치하�
 </settings>
 ```
 
+![setting xml생성](https://user-images.githubusercontent.com/74498379/216567788-0bffb4f2-ce41-4210-982d-fe3d8562a66f.png)
 
+![user_setting설정](https://user-images.githubusercontent.com/74498379/216567884-40dc1998-a046-4509-a680-8ec365e59322.png)
 
 **(2) Maven install 실행안됨**
 
