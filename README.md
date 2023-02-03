@@ -45,9 +45,26 @@ jdk 1.8을 실행하기 위해 9 버전의 Tomcat을 다운로드 및 설치하�
 **4. 스프링 프로젝트 Hello World 출력** <br/>
 1) File > New > Other > Spring > Spring Legacy Project를 선택하여 settingweb이라는 프로젝트를 생성하였습니다.
 2) 패키지명은 com.devfun.settingweb으로 설정하였습니다.
-이때, 다음과 같은 오류가 발생하였습니다. <br/>
 
-<오류 수정 후 내용 추가...>
+**[에러]**
+**(1) user setting file does not exist** </br>
+먼저, Maven Repository가 없어서 이를 해결하기위해 setting.xml을 생성해주었습니다. </br>
+
+```
+<?xml version="1.0"?>
+
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+
+<localRepository>C:\Users\마윤주\.m2\repository</localRepository>
+
+</settings>
+```
+
+
+
+**(2) Maven install 실행안됨**
+
+
 
 **5. mariadb, mySql Workbench 설치 및 샘플 DB 구축** <br/>
 1) Windows용 MariaDB 설치 한 후 설정한 암호를 입력하여 root계정으로 로그인했습니다.
