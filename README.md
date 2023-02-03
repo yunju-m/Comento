@@ -161,6 +161,8 @@ com DNS에 (www.naver.com) 정보가 없다면 Local DNS에게 naver.com DNS정�
 4) 이미지와 같이 package, folder, jsp, java 파일을 생성 후,
 [ src > main ] 아래에 webapp, views 폴더를 차례대로 만들고 **test.jsp**를 만듭니다.
 
+저의 경우 다음과 같이 springboot 프로젝트 생성 과정에서 pom.xml의 parent부분에 에러가 발생하였습니다.
+![springboot_parent에러](https://user-images.githubusercontent.com/74498379/216554695-bc8eb0bb-8980-4cbe-aa1f-930286d041d4.png)
 
 **2. 통계(SW활용현황) API를 위한 DB, Table 생성**<br/>
 - DB, Table 생성문을 이용하여 DB, TABLE을 생성합니다. ( mySql Workbench 이용 )
@@ -194,5 +196,5 @@ VALUES(1, 'L', 'AAA', '2008180520'), #20년 8월 18일 5시 20분
 (4, 'L', 'CCC', '1906220920');
 ```
 
-
+![DBTable결과](https://user-images.githubusercontent.com/74498379/216554609-8a1fdfec-fc48-44ac-ab43-866d5c062b05.png)
 
