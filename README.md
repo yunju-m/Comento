@@ -152,3 +152,47 @@ com DNS에 (www.naver.com) 정보가 없다면 Local DNS에게 naver.com DNS정�
 
 [출처] (https://blog.naver.com/tkdldjs35/221977544533)
 
+## [3차과제] RestController를 활용한 간단 API구현
+**1. 스프링부트 개발환경 설정**<br/>
+1) File > New > Project > Spring Boot > Spring Starter Project 를 클릭하여 프로젝트 생성
+2) Pom.xml 수정
+부트 버전은 2.2.2로 변경합니다.
+3) application.properties 수정 ( src/main/resources )
+4) 이미지와 같이 package, folder, jsp, java 파일을 생성 후,
+[ src > main ] 아래에 webapp, views 폴더를 차례대로 만들고 **test.jsp**를 만듭니다.
+
+
+**2. 통계(SW활용현황) API를 위한 DB, Table 생성**<br/>
+- DB, Table 생성문을 이용하여 DB, TABLE을 생성합니다. ( mySql Workbench 이용 )
+- mysql workbench는 작업관리자에서 MySQL이 아닌, MySQL80으로 실행해야 작동!!! </br>
+
+```SQL
+CREATE DATABASE statistc;
+ 
+CREATE Table statistc.requestInfo (
+    requestID numeric NOT NULL primary key,
+    requestCode varchar(5) NOT NULL,
+    userID varchar(5),
+    createDate varchar(10)
+);
+ 
+CREATE table statistc.requestCode (
+    requestCode varchar(5) NOT NULL primary key,
+    code_explain varchar(50) NOT NULL
+);
+ 
+CREATE table statistc.user (
+    userID varchar(5) NOT NULL primary key,
+    HR_ORGAN varchar(5) NOT NULL,
+    USERNAME varchar(5) NOT NULL
+);
+ 
+INSERT INTO statistc.requestInfo(requestID, requestCode, userID, createDate )
+VALUES(1, 'L', 'AAA', '2008180520'), #20년 8월 18일 5시 20분
+(2, 'O', 'DDD', '2004040404'),
+(3, 'L', 'BBB', '2006220920'),
+(4, 'L', 'CCC', '1906220920');
+```
+
+
+
