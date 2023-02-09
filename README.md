@@ -71,7 +71,7 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
 이제 Path 변수에 제대로 등록되었는지 확인하기위해 '윈도우키+R'을 눌러서 나타난 실행창에 'cmd'를 입력해서 콘솔 창을 띄웁니다.
 콘솔 창에 **'mvn -version'** 라고 입력해서 아래와 같은 화면이 나타나면 설정이 끝납니다. 만약 **'mvn'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.** 라는 문구가 뜬다면 Path 설정이 잘못된 것입니다.
 
-
+![maven설정확인](https://user-images.githubusercontent.com/74498379/217739471-fae7ce3d-5a9b-443f-a93b-d9cf0313d829.png)
 
 2) Maven Repository 이클립스 설정 </br>
 이클립스에서 [Window] - [Preference] - [Maven] - [User Settings] 으로 가서 User Settings 부분에 C:\apache-maven-3.6.0\conf\settings.xml 을 등록합니다.
