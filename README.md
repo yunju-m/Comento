@@ -51,18 +51,23 @@ jdk 1.8을 실행하기 위해 9 버전의 Tomcat을 다운로드 및 설치하�
 먼저, Maven Repository가 없어서 이를 해결하기위해 Maven을 설치해주었습니다.</br>
 Maven홈페이지(https://archive.apache.org/dist/maven/maven-3/) 에 들어가서 버전 **3.8.1**을 다운로드 받았습니다.
 
+![maven_3 8 1](https://user-images.githubusercontent.com/74498379/217731414-5e32fc9a-027e-475f-8c53-877c4fbddb91.png)
 
 여러 파일 중에서 zip 파일인 'apache-maven-3.8.1-bin.zip'을 다운받은 후 C:에서 압축 해제합니다.
+
+![maven_3 8 1zip](https://user-images.githubusercontent.com/74498379/217731434-ba05c7d9-c00f-4464-8286-5d46e32eaabc.png)
 
 > Maven 설치 후 기본 설정 </br>
 1) 환경변수 설정
 압축을 다 풀었으면 이제 환경변수를 설정합니다. '윈도우키+R'을 눌러서 나타난 실행창에 sysdm.cpl 을 입력한 후, 고급 탭에서 '환경변수'를 클릭합니다.
 Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 클릭하여 **C:\apache-maven-3.8.1\bin** 를 입력하고 'Enter' 키를 누른다. Path 변수에 주소가 추가된 것을 확인하고 '확인' 버튼을 누릅니다.
 
+![maven환경변수](https://user-images.githubusercontent.com/74498379/217731454-09c07364-66a0-472d-abe4-6b773ad47f5f.png)
+
 이제 Path 변수에 제대로 등록되었는지 확인하기위해 '윈도우키+R'을 눌러서 나타난 실행창에 'cmd'를 입력해서 콘솔 창을 띄웁니다.
 콘솔 창에 **'mvn -version'** 라고 입력해서 아래와 같은 화면이 나타나면 설정이 끝납니다. 만약 **'mvn'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.** 라는 문구가 뜬다면 Path 설정이 잘못된 것입니다.
 
-
+![maven_설정확인](https://user-images.githubusercontent.com/74498379/217731483-a7855979-3320-4cde-9cbb-1889ebe22eef.png)
 
 2) Maven Repository 이클립스 설정 </br>
 이클립스에서 [Window] - [Preference] - [Maven] - [User Settings] 으로 가서 User Settings 부분에 C:\apache-maven-3.8.1\conf\settings.xml 을 등록합니다.
@@ -73,6 +78,7 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
 
 이클립스에서 메이븐을 사용하려면 'M2E' 라는 Maven Intergration을 설치해야 합니다. 이클립스의 [Help] - [Install New Software]에 들어가면 창이 뜨는데, Work With 란에 https://download.eclipse.org/technology/m2e/releases/latest/ 를 입력 후 엔터를 치면 관련된 소프트웨어가 나오는데 모두 설치합니다.
 
+![m2e설치](https://user-images.githubusercontent.com/74498379/217731520-10fb3e51-c79f-4192-b31f-1b2ecc962d14.png)
 
 **(2) Maven install 실행안됨**
 
