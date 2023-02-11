@@ -85,9 +85,45 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
 
 ![m2e설치](https://user-images.githubusercontent.com/74498379/217731520-10fb3e51-c79f-4192-b31f-1b2ecc962d14.png)
 
-**(2) Maven install 실행안됨**
+**(2) Project build error: Non-resolvable parent POM... Error code 501, HTTPS Required and 'parent.relativePath' points at no local POM** </br>
 
+2020 년 1 월 15 일부터 Central Repository는 더 이상 일반 HTTP를 통한 안전하지 않은 통신을 지원하지 않으며 리포지토리에 대한 모든 요청은 HTTPS를 통해 암호화되어야합니다. 이 오류가 발생하면 Maven Central에 대한 모든 URL 참조를 표준 HTTPS로 바꿔야합니다.
+1) pom.xml에 다음 코드를 추가해줍니다. </br>
 
+ ``` xml
+ <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+ ```
+
+2) parent버전을 2.2.2.RELEASE로 변경해줍니다.
+
+![parentVersion](https://user-images.githubusercontent.com/74498379/218242681-f8030e9d-d581-4a28-8b87-d0a0da6e824c.png)
+
+**(3) Plugin execution not covered by lifecycle configuration: org.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompile (execution: default-testCompile, phase: test-compile)
+org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (execution: default-compile, phase: compile)** </br>
 
 **5. mariadb, mySql Workbench 설치 및 샘플 DB 구축** <br/>
 1) Windows용 MariaDB 설치 한 후 설정한 암호를 입력하여 root계정으로 로그인했습니다.
