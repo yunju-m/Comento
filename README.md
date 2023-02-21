@@ -85,10 +85,11 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
 
 ![m2e설치](https://user-images.githubusercontent.com/74498379/217731520-10fb3e51-c79f-4192-b31f-1b2ecc962d14.png)
 
-**(2) Project build error: Non-resolvable parent POM... Error code 501, HTTPS Required and 'parent.relativePath' points at no local POM** </br>
+**(2)-1 처음 project를 생성한 후Maven Dependencies가 생성되지 않은 경우** </br>
+**(2)-2 Project build error: Non-resolvable parent POM... Error code 501, HTTPS Required and 'parent.relativePath' points at no local POM** </br>
 
 2020 년 1 월 15 일부터 Central Repository는 더 이상 일반 HTTP를 통한 안전하지 않은 통신을 지원하지 않으며 리포지토리에 대한 모든 요청은 HTTPS를 통해 암호화되어야합니다. 이 오류가 발생하면 Maven Central에 대한 모든 URL 참조를 표준 HTTPS로 바꿔야합니다.
-1) pom.xml에 다음 코드를 추가해줍니다. </br>
+1) pom.xml에 project안에 다음 코드를 추가해줍니다. </br>
 
  ``` xml
  <pluginRepositories>
@@ -116,9 +117,34 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
             </snapshots>
         </repository>
     </repositories>
+</project>
  ```
 
-2) parent버전을 2.2.2.RELEASE로 변경해줍니다.
+저장을 하면 자동으로 maven이 설치되면서 설정했던 5.8.1.RELEASE 버전의 스프링 프레임워크가 생성됩니다. </br>
+
+**(3) Class 'org.springframework.web.servlet.config.AnnotationDrivenBeanDefinitionParser  $CompositeUriComponentsContributorFactoryBean' not found [config set: settingweb/web-context] ** </br>
+
+
+<해결 방안>
+1. 프로젝트 우클릭
+2. Spring Tool -> Remove Spring Project Nature
+3. Spring Tool -> Add Spring Project Nature
+
+
+최종적으로 에러를 모두 해결한 모습을 볼 수 있었습니다,, </br>
+이밖에 다른 에러들도 있었으나, pom.xml에서 ignore eclipse를 했더니 모두 사라진 것을 확인하였습니다. </br>
+
+- **참고했던 사이트 목록** </br>
+[이클립스 pom.xml 에러 Plugin execution not covered by lifecycle configuration: org.apache.maven.plugins:maven-compiler-plugin 에러 해결](https://yonoo88.tistory.com/868) </br>
+[Class 'org.springframework.web.servlet.view.InternalResourceViewResolver' not found 오류](https://supiz.tistory.com/24) </br>
+[spring 개발환경구축](https://devpad.tistory.com/23) </br>
+[maven repository생성](https://lovelytney.tistory.com/14) </br>
+[Maven Central 501 HTTPS Required 에러](https://bamdule.tistory.com/41) </br>
+
+
+
+
+2) parent버전을 2.2.2.RELEASE로 변경해줍니다. 
 
 ![parentVersion](https://user-images.githubusercontent.com/74498379/218242681-f8030e9d-d581-4a28-8b87-d0a0da6e824c.png)
 
