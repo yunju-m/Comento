@@ -46,9 +46,13 @@ jdk 1.8을 실행하기 위해 9 버전의 Tomcat을 다운로드 및 설치하�
 1) File > New > Other > Spring > Spring Legacy Project를 선택하여 settingweb이라는 프로젝트를 생성하였습니다.
 2) 패키지명은 com.devfun.settingweb으로 설정하였습니다.
 
-**[에러]**
+**[에러]** </br>
+처음 settingweb 패키지를 생성하자 다음과 같이 34가지의 에러가 발생하였습니다. </br>
+이를 해결하기위해 차근차근 하나씩 풀어나갔습니다. </br>
+![problem에러](https://user-images.githubusercontent.com/74498379/220381958-574d500d-6c43-4a3e-a408-31757c7b67cd.png)
+
 **(1) user setting file does not exist** </br>
-먼저, Maven Repository가 없어서 이를 해결하기위해 Maven을 설치해주었습니다.</br>
+먼저, 대부분의 에러는 Maven Repository가 없었기 때문에 발생하였습니다. 따라서 이를 해결하기위해 Maven을 설치해주었습니다.</br>
 Maven홈페이지(https://archive.apache.org/dist/maven/maven-3/) 에 들어가서 버전 **3.6.0**을 다운로드 받았습니다.
 (3.8.1 버전부터는 http에 대한 외부 연결을 막는 설정이 default로 변경되었기 때문에 3.8.1미만 버전 설치)
 
@@ -122,8 +126,9 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
 
 저장을 하면 자동으로 maven이 설치되면서 설정했던 5.8.1.RELEASE 버전의 스프링 프레임워크가 생성됩니다. </br>
 
-**(3) Class 'org.springframework.web.servlet.config.AnnotationDrivenBeanDefinitionParser  $CompositeUriComponentsContributorFactoryBean' not found [config set: settingweb/web-context] ** </br>
+**(3) Class 'org.springframework.web.servlet.config.AnnotationDrivenBeanDefinitionParser $CompositeUriComponentsContributorFactoryBean' not found [config set: settingweb/web-context]** </br>
 
+![InternalResourceViewResolver에러](https://user-images.githubusercontent.com/74498379/220381501-90dad823-4a49-4c26-8267-64d5dbe2fb48.png)
 
 <해결 방안>
 1. 프로젝트 우클릭
@@ -134,6 +139,8 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
 최종적으로 에러를 모두 해결한 모습을 볼 수 있었습니다,, </br>
 이밖에 다른 에러들도 있었으나, pom.xml에서 ignore eclipse를 했더니 모두 사라진 것을 확인하였습니다. </br>
 
+![최종 해결](https://user-images.githubusercontent.com/74498379/220381551-316869a2-d041-4d54-9cd2-291813d8db3d.png)
+
 - **참고했던 사이트 목록** </br>
 [이클립스 pom.xml 에러 Plugin execution not covered by lifecycle configuration: org.apache.maven.plugins:maven-compiler-plugin 에러 해결](https://yonoo88.tistory.com/868) </br>
 [Class 'org.springframework.web.servlet.view.InternalResourceViewResolver' not found 오류](https://supiz.tistory.com/24) </br>
@@ -141,15 +148,9 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
 [maven repository생성](https://lovelytney.tistory.com/14) </br>
 [Maven Central 501 HTTPS Required 에러](https://bamdule.tistory.com/41) </br>
 
+결과적으로 서버를 셋팅한 후 실행한 결과 다음과 같이 "Hellow World"가 출력된 것을 확인하였습니다. </br>
 
 
-
-2) parent버전을 2.2.2.RELEASE로 변경해줍니다. 
-
-![parentVersion](https://user-images.githubusercontent.com/74498379/218242681-f8030e9d-d581-4a28-8b87-d0a0da6e824c.png)
-
-**(3) Plugin execution not covered by lifecycle configuration: org.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompile (execution: default-testCompile, phase: test-compile)
-org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (execution: default-compile, phase: compile)** </br>
 
 **5. mariadb, mySql Workbench 설치 및 샘플 DB 구축** <br/>
 1) Windows용 MariaDB 설치 한 후 설정한 암호를 입력하여 root계정으로 로그인했습니다.
