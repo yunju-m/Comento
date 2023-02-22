@@ -150,7 +150,7 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
 
 결과적으로 서버를 셋팅한 후 실행한 결과 다음과 같이 "Hellow World"가 출력된 것을 확인하였습니다. </br>
 
-![helloWorld](https://user-images.githubusercontent.com/74498379/220383831-b9cdfdc4-86f0-4a38-8669-7e50e2f17bae.png)
+![helloWorld](https://user-images.githubusercontent.com/74498379/220644017-78a5195f-b6e0-4e03-be58-bcebd8a78cb4.png)
 
 **5. mariadb, mySql Workbench 설치 및 샘플 DB 구축** <br/>
 1) Windows용 MariaDB 설치 한 후 설정한 암호를 입력하여 root계정으로 로그인했습니다.
@@ -171,16 +171,21 @@ Theater(극장)이라는 스키마를 생성하고 그 안에 Tables, Views, Sto
 
 **[오류]** </br>
 **1. No grammar constraints (DTD or XML Schema) referenced in the document.** </br>
+
+![doctype경고](https://user-images.githubusercontent.com/74498379/220644112-2dbe1a1f-f313-48eb-aea7-49fd04510d40.png)
+
 간단히 **!DOCTYPE xml 추가**하면 없어집니다. 하지만 계속 추가하면 번거로울 수 있으므로,
 Window > Preferences > XML > XML Files > Validation에서 Nogrammar specified의 값을 Ingore로 변경하면 사라지는 것을 볼 수 있습니다.
 
-
+![doctype경고해결](https://user-images.githubusercontent.com/74498379/220644140-f8066d8c-75f5-4f86-aaf8-ecc539005922.png)
 
 **2. context:component-scan" is not bound** </br>
 root-context.xml에 다음 코드를 추가해주면 에러를 해결할 수 있습니다.
 ``` xml
 xmlns:context="http://www.springframework.org/schema/context"
 ```
+
+![context_component에러](https://user-images.githubusercontent.com/74498379/220644346-4cc37f02-60d9-48a4-8d78-ad2d4b2679ff.png)
 
 [중간퀴즈] movieVO.java 코드
 movieVO 클래스는 캡슐화 하고자 하는 **DB 테이블의 컬럼명과 동일하게 멤버변수**를 가집니다. </br>
@@ -217,8 +222,12 @@ public class MovieVO {
 
 ```
 log4j.xml 코드의 root logger 부분의 Value를 warn에서 info로 수정합니다. </br>
+
+![rootLogger변경](https://user-images.githubusercontent.com/74498379/220644426-5954aadd-fdb0-4f09-8ed0-614f9dff64f6.png)
+
 Tomcat 세팅을 변경해야 합니다. 구동하기 위한 톰캣을 더블 클릭하고 URL 설정 부분의 path를 "/내용" 에서 "/" 로 변경하면 localhost:8080으로 바로 첫 페이지를 구동 할 수 있습니다.
 
+![tomcat재경로 설정](https://user-images.githubusercontent.com/74498379/220644530-7361f4f6-c643-462f-8444-1881c1edac16.png)
 
 실행결과
 
