@@ -168,8 +168,64 @@ Theater(극장)이라는 스키마를 생성하고 그 안에 Tables, Views, Sto
 ![mysql 무한대기문제 해결책](https://user-images.githubusercontent.com/74498379/212532774-5e8c11c0-69c1-4982-8e1e-782d61505f33.png)</br>
 
 **6. 스프링, Mariadb, MyBatis 연동, 데이터 조회**</br>
-< 4번 문제 해결 후 6번 진행...>
 
+**[오류]** </br>
+**1. No grammar constraints (DTD or XML Schema) referenced in the document.** </br>
+간단히 **!DOCTYPE xml 추가**하면 없어집니다. 하지만 계속 추가하면 번거로울 수 있으므로,
+Window > Preferences > XML > XML Files > Validation에서 Nogrammar specified의 값을 Ingore로 변경하면 사라지는 것을 볼 수 있습니다.
+
+
+
+**2. context:component-scan" is not bound** </br>
+root-context.xml에 다음 코드를 추가해주면 에러를 해결할 수 있습니다.
+``` xml
+xmlns:context="http://www.springframework.org/schema/context"
+```
+
+[중간퀴즈] movieVO.java 코드
+movieVO 클래스는 캡슐화 하고자 하는 **DB 테이블의 컬럼명과 동일하게 멤버변수**를 가집니다. </br>
+getter와 setter를 통해 멤버변수에 접근합니다. </br>
+[이클립스 getter, setter 자동 생성 방법](kanu.tistory.com/32)
+
+``` java
+package com.devfun.vo;
+
+public class MovieVO {
+	private String movie_name;
+	private String director;
+	private String types;
+	
+	public String getMoive_name(){
+		return movie_name;
+	}
+	public void setMovie_name(String movie_name){
+		this.movie_name = movie_name;
+	}
+	public String getDirector(){
+		return director;
+	}
+	public void setDirector(String director){
+		this.director = director;
+	}
+	public String getTypes(){
+		return types;
+	}
+	public void setTypes(String types){
+		this.types = types;
+	}
+}
+
+```
+log4j.xml 코드의 root logger 부분의 Value를 warn에서 info로 수정합니다. </br>
+Tomcat 세팅을 변경해야 합니다. 구동하기 위한 톰캣을 더블 클릭하고 URL 설정 부분의 path를 "/내용" 에서 "/" 로 변경하면 localhost:8080으로 바로 첫 페이지를 구동 할 수 있습니다.
+
+
+실행결과
+
+
+- **참고했던 사이트 목록** </br>
+1. [No grammar constraints (DTD or XML Schema) referenced in the document](https://m.blog.naver.com/PostView.nhn?isHttpsRedirect=true&blogId=s0215hc&logNo=221726723014) </br>
+2. [context:component-scan" is not bound](https://zzangprogrammer.tistory.com/214)
 
 ----
 ## [2차 과제] 인터페이스 가이드 문서 작성
