@@ -229,6 +229,9 @@ Tomcat 세팅을 변경해야 합니다. 구동하기 위한 톰캣을 더블 �
 
 ![tomcat재경로 설정](https://user-images.githubusercontent.com/74498379/220644530-7361f4f6-c643-462f-8444-1881c1edac16.png)
 
+**3. 404 서버에러 발생** </br>
+[spring framework 작동원리](https://hello-walnuty.tistory.com/16) </br>
+
 실행결과
 
 
