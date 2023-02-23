@@ -126,7 +126,19 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
 
 저장을 하면 자동으로 maven이 설치되면서 설정했던 5.8.1.RELEASE 버전의 스프링 프레임워크가 생성됩니다. </br>
 
-**(3) Class 'org.springframework.web.servlet.config.AnnotationDrivenBeanDefinitionParser $CompositeUriComponentsContributorFactoryBean' not found [config set: settingweb/web-context]** </br>
+**(3) Plugin execution not covered by lifecycle configuration: org.apache.maven.plugins:maven-compiler-plugin ** </br>
+
+Eclipse에 groovy를 설치하기 위해 먼저, eclipse marketplace를 실행해줍니다. </br>
+그런데, 갑자기 Eclipse Marketplace가 보이지 않는다...? 그래서 다음과 같은 방법으로 재설치를 해주었습니다. </br>
+1. Help - Install New Software...에 들어가 Work with: 에 https://download.eclipse.org/mpc/photon/ 을 입력합니다.
+2. EPP MarketPlace Client를 클릭하고 Next를 누릅니다.
+
+이제, groovy를 설치하기위해 eclipse 버전을 확인해줍니다.
+help > about eclipse </br>
+저의 경우 4.3.2 버전을 토대로  https://github.com/groovy/groovy-eclipse/wiki#releases 사이트에서 자신의 해당 버전에 맞는 groovy링크를 복사합니다.</br>
+이클립스에서 install New Software 메뉴를 클릭한 후 Add를 클릭하여 앞서 복사한 내용을 붙여 넣습니다.
+
+**(4) Class 'org.springframework.web.servlet.config.AnnotationDrivenBeanDefinitionParser $CompositeUriComponentsContributorFactoryBean' not found [config set: settingweb/web-context]** </br>
 
 ![InternalResourceViewResolver에러](https://user-images.githubusercontent.com/74498379/220381501-90dad823-4a49-4c26-8267-64d5dbe2fb48.png)
 
@@ -147,7 +159,9 @@ Maven이 설치된 경로를 Path에 추가하기 위해 '새로 만들기'를 �
 [spring 개발환경구축](https://devpad.tistory.com/23) </br>
 [maven repository생성](https://lovelytney.tistory.com/14) </br>
 [Maven Central 501 HTTPS Required 에러](https://bamdule.tistory.com/41) </br>
-
+[org.apache.maven.plugins:maven-compiler-plugin 에러 해결](https://yonoo88.tistory.com/868) </br>
+[Eclipse Marketplace 재설치](https://clgnsdl94.tistory.com/55) </br>
+[Eclipse groovy 설치 방법](https://gocoder.tistory.com/2452) </br>
 결과적으로 서버를 셋팅한 후 실행한 결과 다음과 같이 "Hellow World"가 출력된 것을 확인하였습니다. </br>
 
 ![helloWorld](https://user-images.githubusercontent.com/74498379/220644017-78a5195f-b6e0-4e03-be58-bcebd8a78cb4.png)
