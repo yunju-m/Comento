@@ -184,7 +184,7 @@ Theater(극장)이라는 스키마를 생성하고 그 안에 Tables, Views, Sto
 **6. 스프링, Mariadb, MyBatis 연동, 데이터 조회**</br>
 
 **[오류]** </br>
-**1. No grammar constraints (DTD or XML Schema) referenced in the document.** </br>
+**1-1. No grammar constraints (DTD or XML Schema) referenced in the document.** </br>
 
 ![doctype경고](https://user-images.githubusercontent.com/74498379/220644112-2dbe1a1f-f313-48eb-aea7-49fd04510d40.png)
 
@@ -193,7 +193,8 @@ Window > Preferences > XML > XML Files > Validation에서 Nogrammar specified의
 
 ![doctype경고해결](https://user-images.githubusercontent.com/74498379/220644140-f8066d8c-75f5-4f86-aaf8-ecc539005922.png)
 
-또는, 다음과 같이 코드를 수정하면 됩니다. </
+**1-2. log4j.dtd (지정된 파일을 찾을 수 없습니다)** </br>
+다음과 같이 코드를 수정하면 됩니다. </br>
 <수정 전 코드>
 ```xml
 <!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
