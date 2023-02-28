@@ -193,6 +193,16 @@ Window > Preferences > XML > XML Files > Validation에서 Nogrammar specified의
 
 ![doctype경고해결](https://user-images.githubusercontent.com/74498379/220644140-f8066d8c-75f5-4f86-aaf8-ecc539005922.png)
 
+또는, 다음과 같이 코드를 수정하면 됩니다. </
+<수정 전 코드>
+```xml
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+```
+<수정 후 코드>
+```xml
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+```
+
 **2. context:component-scan" is not bound** </br>
 root-context.xml에 다음 코드를 추가해주면 에러를 해결할 수 있습니다.
 ``` xml
